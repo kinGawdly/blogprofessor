@@ -1,54 +1,163 @@
 ---
 import "@/styles/globals.css";
 
-import { Button } from "@/components/ui/button";
+import About from "@/components/About.astro";
+import Publications from "@/components/Publications.astro";
+import { Avatar } from "@/components/ui/avatar";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <h1>Welcome to <span class="text-gradient">Astro</span></h1>
-    <p class="instructions">
-      To get started, open the directory <code>src/pages</code> in your project.<br
-      />
-      <Button>Get Started</Button>
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-    </p>
+    <div class="bg-background text-foreground font-serif">
+      <header class="px-4 py-6 md:px-8 md:py-8 lg:px-12 lg:py-10 border-b">
+        <div
+          class="container max-w-5xl mx-auto flex items-center justify-between"
+        >
+          <div class="flex items-center gap-4">
+            <Avatar class="w-12 h-12 md:w-16 md:h-16">
+              <!-- <AvatarImage src="/placeholder-user.jpg" /> -->
+              <!-- <AvatarFallback>JD</AvatarFallback> -->
+            </Avatar>
+            <div>
+              <h1 class="text-2xl font-bold md:text-3xl">John Doe, Ph.D.</h1>
+              <p class="text-muted-foreground text-sm md:text-base">
+                Professor of Computer Science
+              </p>
+            </div>
+          </div>
+          <nav class="hidden md:flex gap-6">
+            <a href="#" class="text-sm font-medium hover:underline"> About </a>
+            <a href="#" class="text-sm font-medium hover:underline">
+              Publications
+            </a>
+            <a href="#" class="text-sm font-medium hover:underline">
+              Research
+            </a>
+            <a href="#" class="text-sm font-medium hover:underline"> Talks </a>
+            <a href="#" class="text-sm font-medium hover:underline">
+              Contact
+            </a>
+          </nav>
+        </div>
+      </header>
+      <main class="px-4 py-8 md:px-8 md:py-12 lg:px-12 lg:py-16">
+        <div class="container max-w-5xl mx-auto grid gap-12">
+          <About />
+          <Publications />
+          <section id="research">
+            <h2 class="text-2xl font-bold mb-4 md:text-3xl">Research</h2>
+            <div class="grid gap-6">
+              <div class="border rounded-lg p-4">
+                <h3 class="text-lg font-bold mb-2">
+                  Adaptive Learning Algorithms for Intelligent Systems
+                </h3>
+                <p class="text-muted-foreground text-sm mb-2">
+                  Funded by the National Science Foundation, 2018-2022
+                </p>
+                <div class="prose">
+                  <p>
+                    This research project focuses on developing novel adaptive
+                    learning algorithms that can enable intelligent systems to
+                    learn and adapt in complex, dynamic environments. The goal
+                    is to create more robust and flexible AI systems that can
+                    handle uncertainty and changing conditions.
+                  </p>
+                </div>
+              </div>
+              <div class="border rounded-lg p-4">
+                <h3 class="text-lg font-bold mb-2">
+                  Multimodal Perception for Autonomous Robots
+                </h3>
+                <p class="text-muted-foreground text-sm mb-2">
+                  Funded by the Department of Defense, 2020-2024
+                </p>
+                <div class="prose">
+                  <p>
+                    This research project investigates the use of multimodal
+                    perception, combining vision, audition, and other sensory
+                    modalities, to enable more robust and reliable perception
+                    for autonomous robots. The aim is to develop systems that
+                    can better understand and interact with their environments.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="talks">
+            <h2 class="text-2xl font-bold mb-4 md:text-3xl">Talks</h2>
+            <div class="grid gap-6">
+              <div class="border rounded-lg p-4">
+                <h3 class="text-lg font-bold mb-2">
+                  The Future of Artificial Intelligence in Education
+                </h3>
+                <p class="text-muted-foreground text-sm mb-2">
+                  Keynote, University of Example Annual Conference, 2023
+                </p>
+                <div class="prose">
+                  <p>
+                    In this keynote address, Professor Doe explored the
+                    potential of artificial intelligence to transform the field
+                    of education. He discussed how AI-powered tools and
+                    techniques can be used to personalize learning, enhance
+                    teaching methods, and improve educational outcomes.
+                  </p>
+                </div>
+              </div>
+              <div class="border rounded-lg p-4">
+                <h3 class="text-lg font-bold mb-2">
+                  Ethical Considerations in AI Development
+                </h3>
+                <p class="text-muted-foreground text-sm mb-2">
+                  Guest Lecture, University of Prestigious, 2022
+                </p>
+                <div class="prose">
+                  <p>
+                    In this guest lecture, Professor Doe addressed the important
+                    topic of ethical considerations in the development and
+                    deployment of artificial intelligence systems. He discussed
+                    the potential risks and challenges, as well as strategies
+                    for ensuring AI is developed and used responsibly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="contact">
+            <h2 class="text-2xl font-bold mb-4 md:text-3xl">Contact</h2>
+            <div class="grid gap-6">
+              <div class="border rounded-lg p-4">
+                <h3 class="text-lg font-bold mb-2">Get in Touch</h3>
+                <div class="prose">
+                  <p>
+                    If you would like to get in touch with Professor Doe, please
+                    feel free to reach out using the following contact
+                    information:
+                  </p>
+                  <ul>
+                    <li>Email: john.doe@example.edu</li>
+                    <li>Phone: (123) 456-7890</li>
+                    <li>Office: 123 Main Street, Example City, 12345</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer
+        class="bg-muted text-muted-foreground px-4 py-6 md:px-8 md:py-8 lg:px-12 lg:py-10 border-t"
+      >
+        <div
+          class="container max-w-5xl mx-auto flex items-center justify-between"
+        >
+          <p class="text-sm">&copy; 2024 John Doe. All rights reserved.</p>
+          <nav class="hidden md:flex gap-6">
+            <a href="#" class="text-sm hover:underline">Privacy Policy</a>
+            <a href="#" class="text-sm hover:underline">Terms of Use</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
   </main>
 </Layout>
-
-<style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .instructions {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    padding: 1.5rem;
-    border-radius: 8px;
-  }
-</style>
